@@ -5,8 +5,150 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+ 
 </head>
 <body>
+    <header class="bg-black mb-4 mt-3  pt-12 gap-5 p-10 h-96">
+      
+      <section class="container mx-auto flex items-center justify-around ">
+      
+      <div class='container text-center'>  
+        <div class="conta">
+<h1 class="text-5xl uppercase font-semibold text-amber-600 leading-normal text-center"> select your best fives <h1>
+  </div>
+<p class="text-white text-2xl">Football is one of the most popular games in the world. <br> It is a game of excitement and thrill as 
+  <br>
+  nobody knows at which moment match will take the turn.
+
+  </p>
+        </div>
+        
+      </section>
+    </header>
+    <main>
+      <section>
+   <div class="grid grid-cols-4 gap-4 p-5 bg-black">
+    <div class=" p-10 text-center shadow-lg">
+      <div class="p-5 rounded-lg  mb-1">
+      <img src="player/Paulo-Dybala-4-scaled-e1647959526234.jpg" alt="">
+      </div>
+      <div class="bg-black">
+        <h1 class=" font-semibold text-center mb-2 text-white">paulo Dybala</h1>
+        <span class="text-white">36goals . 120 Assist</span>
+        <br>
+        <button class="px-9 py-4  bg-blue-600 text-white font-semibold rounded mt-1 " id="select-one" 
+        >Select now</button>
+      </div>
+     
+    </div>
+    <div class=" p-10 text-center shadow-lg bg-black">
+      <div class="p-5 rounded-lg mb-1">
+      <img src="player/marcos-acuna.jpg" alt="">
+      </div>
+      <div class="bg-black">
+        <h1 class=" font-semibold text-center mb-1 text-white">marcos acuna</h1>
+        <span class="text-white ">36goals . 120 Assist</span>
+        <br>
+        <button class="px-9 py-4  bg-blue-600 text-white font-semibold rounded mb-2 mt-3" id="select-two" >Select now</button>
+      </div>
+      
+    </div>
+    <div class=" p-10 text-center shadow-lg bg-black">
+      <div class="p-5 rounded-lg mb-2">
+      <img src="player/Kylian Mbappe PSG 042922 169.jpg" alt="">
+      </div>
+      <div class="bg-black">
+        <h1 class="font-semibold text-center mb-2 text-white">mbappe</h1>
+        <span class="text-white">36goals . 120 Assist</span>
+        <br>
+        <button class=" mt-3 px-9 py-4  bg-blue-600 text-white font-semibold rounded  " id="select-three">Select now</button>
+      </div>
+    </div>
     
+    <div class=" bg-black text-center text-white" >
+      <p class="text-3xl">Selected-v</p>
+      <div class="p-5  rounded-lg mb-1 ">
+      <ul id="selected">
+      <li id="first" ></li>
+      <li id="second"></li>
+      <li id="third" ></li>
+      <li id="forth" ></li>
+      <li id="fifth"></li>
+      <li id="six" ></li>
+      </ul>
+      </div>
+    </div>
+    <div class=" p-10 text-center shadow-lg bg-black" >
+      <div class="p-5 rounded-lg  mb-1">
+      <img src="player/16483741837004.jpg" alt="">
+      </div>
+      <div>
+        <h1 class=" font-semibold text-center mb-2 text-white">Naymar</h1>
+        <span class="text-white">36goals . 120 Assist</span>
+        <br>
+        <button class="px-9 py-4  bg-blue-600 text-white font-semibold rounded mt-1 " id="select-four">Select now</button>
+      </div>
+    </div>
+    <div class=" p-10 text-center shadow-lg bg-black">
+      <div class="p-5 rounded-lg  mb-1">
+      <img src="player/16769299713481.jpg" alt="">
+      </div>
+      <div class="bg-black">
+        <h1 class="text-3xl font-semibold text-center mb-2 text-white">Lional Messi</h1>
+        <span class="text-white">36goals . 120 Assist</span>
+        <br>
+        <button class="px-9 py-4  bg-blue-600 text-white font-semibold rounded mt-1 " id="select-five">Select now</button>
+      </div>
+    </div>
+    <div class=" p-10 text-center shadow-lg bg-black">
+      <div class="p-5 rounded-lg mb-1">
+      <img src="player/Alvarez-Argentina.jpg" alt="">
+      </div>
+      <div class="bg-black">
+        <h1 class="text-3xl font-semibold text-center mb-2 text-white">Alvaraaz</h1>
+        <span class="text-white">36goals . 120 Assist</span>
+        <br>
+        <button class=" mt-1 px-9 py-4  bg-blue-600 text-white font-semibold rounded " id="select-six">Select now</button>
+      </div>
+     
+    </div>
+   
+    <!-- calculation -->
+   <div class="text-center mb-12">
+    <p class="text-white mb-2 ">budget</p>
+    <span  class="text-white ">player: <span id="per-player"></span>  </span>
+    <input type="number" id="number-field" class="py-2 px-2 w-40">
+    <button class="px-9 py-4  bg-blue-600 text-white font-semibold rounded mt-4 mb-3 w-64" id="calculate" >calculate</button>
+    <h1 class="mb-2 text-white">player Expenses <span id="player-expenses"> 00 </span> </h1>
+    <span class="text-white">manager: </span>
+    <input  id="manager-expenses" class="mb-2 py-2 px-2 w-40" type="number" >
+    <br>
+    <span class="text-white">coach:</span>
+    <input id="coach-Expenses" class="mb-2 py-2 px-2 w-40" type="number" >
+    <button class="px-9 py-4  bg-blue-600 text-white font-semibold rounded mt-4 mb-3 w-64" id="calculate-now" >calculate</button>
+    <p class="text-2xl text-white ">Total :  <span id="final">00</span>
+   </div>
+   </div>
+   </section>
+    </main>
+    <footer class="bg-black ">
+    <hr>
+    <p class="text-center text-white mt-5 mb-2 " >Easy tutorial 2023-All right reserved</p>
+
+    </footer>
+    <script src="js/first.js"></script>
 </body>
 </html>
